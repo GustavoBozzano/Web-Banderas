@@ -168,7 +168,6 @@ button {
 .neighbor-details {
   position: absolute;
   top: auto;
-  /* left: 5%; */
   transition: left 0.5s ease;
   z-index: 0;
   margin-left: 10px;
@@ -188,29 +187,17 @@ button {
   }
 }
 
-/* @media (min-width: 768px) {
-  .card-container {
-    flex-direction: row;
+@media (max-width: 768px) {
+  .neighbor-details.active {
+    animation: slide-in 0.5s forwards;
+    margin-left: 0;
   }
-
-  .neighbor-details {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    width: 400px;
-    height: 100%;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transform: translateX(-100%);
-    transition: transform 0.5s ease;
-    z-index: 0;
+  @keyframes slide-in {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(180%);
+    }
   }
-
-  .card-container .neighbor-details {
-    transform: translateX(0);
-    z-index: 1;
-  }
-} */
+}
